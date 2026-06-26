@@ -65,7 +65,6 @@ $curso6Texto = "Formação voltada à gestão de pessoas, recrutamento, seleçã
         <section class="pagina">
             <h2><?php echo $tituloQuemSomos; ?></h2>
             <p><?php echo $texto1; ?></p>
-
             <p><?php echo $texto2; ?></p>
         </section>
 
@@ -147,6 +146,31 @@ $curso6Texto = "Formação voltada à gestão de pessoas, recrutamento, seleçã
     <footer>
         <p><?php echo $rodape; ?></p>
     </footer>
+
+    <button onclick="voltarAoTopo()" id="botaoTopo">Topo</button>
+
+    <script>
+        window.onscroll = function () {
+            mostrarBotaoTopo();
+        };
+
+        function mostrarBotaoTopo() {
+            let botao = document.getElementById("botaoTopo");
+
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                botao.style.display = "block";
+            } else {
+                botao.style.display = "none";
+            }
+        }
+
+        function voltarAoTopo() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
 
 </body>
 </html>
