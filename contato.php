@@ -49,5 +49,30 @@ $rodape = "&copy; 2026 - Etec Zona Leste";
         <p><?php echo $rodape; ?></p>
     </footer>
 
+    <button onclick="voltarAoTopo()" id="botaoTopo">Topo</button>
+
+    <script>
+        window.onscroll = function () {
+            mostrarBotaoTopo();
+        };
+
+        function mostrarBotaoTopo() {
+            let botao = document.getElementById("botaoTopo");
+
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                botao.style.display = "block";
+            } else {
+                botao.style.display = "none";
+            }
+        }
+
+        function voltarAoTopo() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
 </body>
 </html>
